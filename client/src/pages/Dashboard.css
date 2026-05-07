@@ -1,0 +1,82 @@
+.dashboard-container {
+  padding: 24px;
+  min-height: 100vh;
+  background: var(--bg-dark);
+  color: var(--text-main);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.stat-card {
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.stat-icon {
+  width: 48px;
+  height: 48px;
+  color: var(--primary);
+  background: rgba(255, 63, 108, 0.1);
+  padding: 12px;
+  border-radius: 12px;
+}
+
+.stat-value {
+  font-size: 32px;
+  font-weight: bold;
+  color: var(--text-main);
+  margin-top: 4px;
+}
+
+.inventory-section {
+  padding: 24px;
+}
+
+.inventory-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.inventory-table th, .inventory-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+.inventory-table th {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.stock-badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.stock-badge.good {
+  background: rgba(3, 166, 133, 0.1);
+  color: #03a685;
+}
+
+.stock-badge.low {
+  background: rgba(255, 204, 0, 0.1);
+  color: #ffcc00;
+}
