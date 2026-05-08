@@ -137,12 +137,19 @@ const MainApp = () => {
         <div className="floating-actions">
           <button className="action-btn glass-card" onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} title="Toggle Theme">
             {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+            <span>{theme === 'dark' ? 'Light' : 'Dark'}</span>
           </button>
           <button className="action-btn glass-card" onClick={() => setShowAnalytics(true)} title="Insights">
             <BarChart3 size={18} />
+            <span>Insights</span>
           </button>
           <button className="action-btn glass-card" onClick={getCurrentLocation} title="My Location">
             <MapPin size={18} />
+            <span>Real Loc</span>
+          </button>
+          <button className="action-btn glass-card" onClick={setMockLocation} style={{ borderStyle: 'dashed' }} title="Demo Location">
+            <Zap size={18} />
+            <span>Demo (Delhi)</span>
           </button>
         </div>
 

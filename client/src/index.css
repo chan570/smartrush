@@ -292,8 +292,25 @@ body {
   .floating-actions {
     top: 20px !important;
     right: 20px !important;
+    left: auto !important;
+    transform: none !important;
+    width: auto !important;
     flex-direction: column;
-    gap: 12px;
+    gap: 8px;
+    z-index: 5000;
+  }
+
+  .action-btn {
+    padding: 10px !important;
+    border-radius: 12px !important;
+    width: auto !important;
+    justify-content: flex-start;
+  }
+
+  .action-btn span {
+    display: block !important;
+    font-size: 10px;
+    white-space: nowrap;
   }
 
   .mobile-menu-btn {
@@ -311,10 +328,6 @@ body {
     background: var(--bg-card);
     border: 1px solid var(--border);
     cursor: pointer;
-  }
-
-  .sidebar-mobile-toggle {
-    display: none !important;
   }
 }
 
