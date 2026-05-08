@@ -612,11 +612,18 @@ const InventoryModal = ({ store, onClose }) => {
             gap: 10px;
           }
           .modal-body-premium {
-            padding: 16px;
+            padding: 16px 16px 100px;
           }
           .product-detail-view {
             grid-template-columns: 1fr;
-            gap: 24px;
+            gap: 20px;
+          }
+          .specs-section {
+            margin-bottom: 20px;
+          }
+          .detail-price-box {
+            margin-bottom: 20px;
+            padding: 12px 20px;
           }
           .inventory-grid {
             grid-template-columns: 1fr;
