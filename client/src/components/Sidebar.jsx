@@ -106,9 +106,8 @@ const Sidebar = ({ stores, userLocation, urgency, setUrgency, onStoreSelect, dis
     <>
       <aside 
         className={`glass-sidebar ${isOpen ? 'active' : ''}`} 
-        style={{ width: window.innerWidth > 768 ? `${width}px` : '100%', flex: 'none' }}
+        style={{ width: window.innerWidth > 768 ? `${width}px` : '85vw', flex: 'none' }}
       >
-        <div className="mobile-handle" onClick={onClose} />
         <div 
           className={`resize-handle ${isResizing ? 'active' : ''}`} 
           onMouseDown={startResizing}
@@ -122,6 +121,10 @@ const Sidebar = ({ stores, userLocation, urgency, setUrgency, onStoreSelect, dis
             </h1>
             <p style={{ fontSize: '14px', color: 'var(--text-muted)' }}>Urgent shopping, solved.</p>
           </div>
+          
+          <button className="mobile-close-btn" onClick={onClose}>
+            <CloseIcon size={24} />
+          </button>
           
           {user && (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
@@ -365,18 +368,16 @@ const Sidebar = ({ stores, userLocation, urgency, setUrgency, onStoreSelect, dis
           100% { transform: scale(0.8); opacity: 0.5; }
         }
 
-        .mobile-handle {
+        .mobile-close-btn {
           display: none;
-          width: 40px;
-          height: 5px;
-          background: var(--border);
-          border-radius: 10px;
-          margin: 10px auto 20px;
+          background: none;
+          border: none;
+          color: var(--text-muted);
           cursor: pointer;
         }
 
         @media (max-width: 768px) {
-          .mobile-handle {
+          .mobile-close-btn {
             display: block;
           }
         }

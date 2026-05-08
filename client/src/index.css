@@ -264,86 +264,62 @@ body {
     flex-direction: column;
     height: 100vh;
     width: 100vw;
-    position: relative;
   }
 
   .main-content {
-    position: absolute !important;
-    top: 0;
-    left: 0;
+    position: relative;
     height: 100vh !important;
     width: 100vw !important;
-    z-index: 1;
   }
 
   .glass-sidebar {
     position: fixed !important;
-    bottom: 0;
+    top: 0;
     left: 0;
-    width: 100% !important;
-    height: 60vh !important;
-    z-index: 5000 !important;
-    border-radius: 24px 24px 0 0;
-    border-top: 1px solid var(--border);
-    transform: translateY(100%);
-    transition: transform 0.3s ease-out;
-    padding: 20px 16px !important;
-    overflow-y: auto;
+    width: 85vw !important; /* Drawer style */
+    height: 100vh !important;
+    z-index: 10000 !important;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    border-radius: 0 24px 24px 0;
+    box-shadow: 20px 0 50px rgba(0,0,0,0.5);
   }
 
   .glass-sidebar.active {
-    transform: translateY(0);
-  }
-
-  .sidebar-handle, .resize-handle {
-    display: none !important;
+    transform: translateX(0);
   }
 
   .floating-actions {
-    top: 10px !important;
-    right: 10px !important;
-    left: auto !important;
-    transform: none !important;
-    width: auto !important;
+    top: 20px !important;
+    right: 20px !important;
     flex-direction: column;
-    gap: 8px;
+    gap: 12px;
   }
 
-  .action-btn {
-    padding: 8px !important;
-    border-radius: 50% !important;
-  }
-
-  .action-btn span {
-    display: none;
+  .mobile-menu-btn {
+    display: flex !important;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 5000;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    cursor: pointer;
   }
 
   .sidebar-mobile-toggle {
-    display: flex !important;
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    z-index: 4000;
+    display: none !important;
   }
 }
 
-.sidebar-mobile-toggle {
+.mobile-menu-btn {
   display: none;
-  width: 60px;
-  height: 60px;
-  border-radius: 30px;
-  background: var(--primary);
-  color: white;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 10px 30px var(--primary-glow);
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.sidebar-mobile-toggle:active {
-  transform: scale(0.9);
 }
 
 .leaflet-container {

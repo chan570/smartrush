@@ -126,22 +126,23 @@ const MainApp = () => {
       />
       
       <main className="main-content">
+        {/* Mobile Menu Button */}
+        <button 
+          className="mobile-menu-btn glass-card"
+          onClick={() => setMobileSidebarOpen(true)}
+        >
+          <Menu size={24} />
+        </button>
+
         <div className="floating-actions">
-          <button className="action-btn glass-card" onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
+          <button className="action-btn glass-card" onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} title="Toggle Theme">
             {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
-            <span>{theme === 'dark' ? 'Light' : 'Dark'}</span>
           </button>
-          <button className="action-btn glass-card" onClick={() => setShowAnalytics(true)}>
+          <button className="action-btn glass-card" onClick={() => setShowAnalytics(true)} title="Insights">
             <BarChart3 size={18} />
-            <span>Insights</span>
           </button>
-          <button className="action-btn glass-card" onClick={getCurrentLocation}>
+          <button className="action-btn glass-card" onClick={getCurrentLocation} title="My Location">
             <MapPin size={18} />
-            <span>Real Loc</span>
-          </button>
-          <button className="action-btn glass-card" onClick={setMockLocation} style={{ borderStyle: 'dashed' }}>
-            <Zap size={18} />
-            <span>Demo (Delhi)</span>
           </button>
         </div>
 
