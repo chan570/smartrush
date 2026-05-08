@@ -589,6 +589,46 @@ const InventoryModal = ({ store, onClose }) => {
         .success-msg { color: var(--text-muted); max-width: 500px; margin: 16px auto 40px; line-height: 1.7; }
         .time-highlight { color: #03a685; font-weight: 800; }
         .success-actions { display: flex; flex-direction: column; gap: 16px; max-width: 400px; margin: 0 auto; }
+        @media (max-width: 768px) {
+          .modal-backdrop-premium {
+            padding: 0;
+          }
+          .modal-container-premium {
+            height: 100vh;
+            border-radius: 0;
+            max-width: 100vw;
+          }
+          .modal-header-premium {
+            padding: 16px;
+          }
+          .store-header-premium {
+            padding: 0 16px 16px;
+          }
+          .store-header-premium h1 {
+            font-size: 24px;
+          }
+          .store-meta {
+            flex-wrap: wrap;
+            gap: 10px;
+          }
+          .modal-body-premium {
+            padding: 16px;
+          }
+          .product-detail-view {
+            grid-template-columns: 1fr;
+            gap: 24px;
+          }
+          .inventory-grid {
+            grid-template-columns: 1fr;
+          }
+          .big-image-premium img {
+            max-height: 250px;
+            object-fit: cover;
+          }
+          .success-actions {
+            max-width: 100%;
+          }
+        }
       `}</style>
     </div>
   );

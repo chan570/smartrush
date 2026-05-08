@@ -18,7 +18,7 @@ const PRESET_CITIES = [
   { name: 'Pune', lat: 18.5204, lng: 73.8567 },
 ];
 
-const Sidebar = ({ stores, userLocation, urgency, setUrgency, onStoreSelect, discoveryStatus, onLocationChange, onUseMyLocation }) => {
+const Sidebar = ({ stores, userLocation, urgency, setUrgency, onStoreSelect, discoveryStatus, onLocationChange, onUseMyLocation, isOpen, onClose }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedBrand, setSelectedBrand] = useState('All');
   const [showCityPicker, setShowCityPicker] = useState(false);
@@ -104,7 +104,11 @@ const Sidebar = ({ stores, userLocation, urgency, setUrgency, onStoreSelect, dis
 
   return (
     <>
-      <aside className="glass-sidebar" style={{ width: `${width}px`, flex: 'none' }}>
+      <aside 
+        className={`glass-sidebar ${isOpen ? 'active' : ''}`} 
+        style={{ width: window.innerWidth > 768 ? `${width}px` : '100%', flex: 'none' }}
+      >
+        <div className="mobile-handle" onClick={onClose} />
         <div 
           className={`resize-handle ${isResizing ? 'active' : ''}`} 
           onMouseDown={startResizing}
@@ -359,6 +363,22 @@ const Sidebar = ({ stores, userLocation, urgency, setUrgency, onStoreSelect, dis
           0% { transform: scale(0.8); opacity: 0.5; }
           50% { transform: scale(1.2); opacity: 1; }
           100% { transform: scale(0.8); opacity: 0.5; }
+        }
+
+        .mobile-handle {
+          display: none;
+          width: 40px;
+          height: 5px;
+          background: var(--border);
+          border-radius: 10px;
+          margin: 10px auto 20px;
+          cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+          .mobile-handle {
+            display: block;
+          }
         }
       `}</style>
     </>

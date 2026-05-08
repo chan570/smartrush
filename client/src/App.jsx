@@ -108,6 +108,8 @@ const MainApp = () => {
     fetchStores(lat, lng);
   };
 
+  const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
+
   return (
     <div className={`app-container ${theme}`}>
       <Sidebar 
@@ -115,10 +117,12 @@ const MainApp = () => {
         userLocation={userLocation}
         urgency={urgency}
         setUrgency={setUrgency}
-        onStoreSelect={handleStoreSelect}
+        onStoreSelect={(s) => { handleStoreSelect(s); setMobileSidebarOpen(false); }}
         discoveryStatus={discoveryStatus}
         onLocationChange={handleLocationChange}
         onUseMyLocation={getCurrentLocation}
+        isOpen={mobileSidebarOpen}
+        onClose={() => setMobileSidebarOpen(false)}
       />
       
       <main className="main-content">
@@ -140,6 +144,13 @@ const MainApp = () => {
             <span>Demo (Delhi)</span>
           </button>
         </div>
+
+        <button 
+          className="sidebar-mobile-toggle"
+          onClick={() => setMobileSidebarOpen(!mobileSidebarOpen)}
+        >
+          <MapIcon size={24} />
+        </button>
 
         <MapView 
           stores={stores} 
