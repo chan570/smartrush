@@ -27,7 +27,13 @@ router.get('/get-key', protect, (req, res) => {
 // Get My Orders
 router.get('/my-orders', protect, async (req, res) => {
   try {
-    const orders = await Order.find({ userId: req.user._id })
+    const orders = await Order.find({ 
+      userId: req.user._id,
+      $or: [
+        { paymentMethod: 'COD' },
+        { status: 'Paid' }
+      ]
+    })
       .populate('store')
       .populate('deliveryPerson')
       .sort({ createdAt: -1 });
