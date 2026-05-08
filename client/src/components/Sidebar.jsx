@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useCallback, useEffect } from 'react';
 import { calculateDistance, estimateTravelTime } from '../utils/geoUtils';
-import { Search, Clock, MapPin, Filter, Star, Navigation, ChevronDown, User, LogOut, ShoppingBag, GripVertical } from 'lucide-react';
+import { Search, Clock, MapPin, Filter, Star, Navigation, ChevronDown, User, LogOut, ShoppingBag, GripVertical, X as CloseIcon } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
