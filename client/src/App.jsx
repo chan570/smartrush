@@ -4,7 +4,7 @@ import MapView from './components/MapView';
 import InventoryModal from './components/InventoryModal';
 import AnalyticsDashboard from './components/AnalyticsDashboard';
 import api from './utils/api';
-import { BarChart3, Map as MapIcon, Sun, Moon, MapPin, Zap } from 'lucide-react';
+import { BarChart3, Map as MapIcon, Sun, Moon, MapPin, Zap, Menu } from 'lucide-react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext';

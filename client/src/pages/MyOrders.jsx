@@ -293,13 +293,16 @@ const MyOrders = () => {
         .i-name { font-size: 14px; font-weight: 600; }
         .i-meta { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
 
-        .loading-state { height: 60vh; display: flex; align-items: center; justify-content: center; }
-        .empty-orders { text-align: center; padding: 80px 0; grid-column: 1/-1; }
-        .empty-orders h2 { margin: 24px 0 8px; }
-        .empty-orders p { color: var(--text-muted); margin-bottom: 32px; }
-
-        .Loader2 { animation: spin 1s linear infinite; }
-        @keyframes spin { from { transform: rotate(0); } to { transform: rotate(360deg); } }
+        @media (max-width: 768px) {
+          .my-orders-container-premium { padding: 20px 16px; }
+          .orders-header h1 { font-size: 32px; }
+          .tracking-main-card { padding: 24px 16px; border-radius: 20px; }
+          .tracking-header { flex-direction: column; gap: 20px; }
+          .tracking-timeline { padding: 0; }
+          .step-label { font-size: 8px; }
+          .tracking-details-grid { grid-template-columns: 1fr; gap: 16px; }
+          .order-id-box h3, .order-total-box h3 { font-size: 20px; }
+        }
       `}</style>
     </div>
   );

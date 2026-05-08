@@ -630,8 +630,28 @@ const StoreOwnerDashboard = () => {
         .selected-item-preview img { width: 50px; height: 60px; border-radius: 8px; object-fit: cover; }
         .p-category { font-size: 12px; color: var(--primary); font-weight: 700; text-transform: uppercase; }
 
-        .Loader2 { animation: rotate 1s linear infinite; }
-        @keyframes rotate { from { transform: rotate(0); } to { transform: rotate(360deg); } }
+        @media (max-width: 1024px) {
+          .sidebar-premium { width: 80px; padding: 24px 12px; }
+          .brand-name, .user-info { display: none; }
+          .nav-item span { display: none; }
+          .logo-box { margin: 0 auto; }
+          .sidebar-footer { flex-direction: column; gap: 20px; }
+        }
+
+        @media (max-width: 768px) {
+          .dashboard-layout-premium { flex-direction: column; }
+          .sidebar-premium { width: 100%; height: auto; padding: 16px; border-right: none; border-bottom: 1px solid var(--border); }
+          .sidebar-nav { flex-direction: row; justify-content: space-around; }
+          .sidebar-header { margin-bottom: 0; padding: 0; }
+          .sidebar-footer { display: none; }
+          .main-content-premium { padding: 24px 16px; }
+          .content-header-premium { flex-direction: column; gap: 20px; align-items: flex-start; }
+          .header-actions { width: 100%; flex-direction: column; }
+          .search-bar-premium { width: 100%; }
+          .stats-grid-premium { grid-template-columns: 1fr; }
+          .premium-table { display: block; overflow-x: auto; }
+          .modal-content-premium { padding: 24px 16px; }
+        }
       `}</style>
     </div>
   );
